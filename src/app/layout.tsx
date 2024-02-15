@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
+import "@/style/recaptcha.css";
 import { ThemeProvider } from "@/components/dark-mode/theme-provider";
 import Navbar from "@/components/navbar/navbar";
 import { cn } from "@/lib/utils";

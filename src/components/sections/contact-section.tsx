@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import TitleSection from "./title-section";
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
@@ -45,6 +45,7 @@ export default function ContactSection() {
     try {
       setIsLoading(true);
 
+      // Execute reCAPTCHA with action "contact"
       if (!executeRecaptcha) {
         throw new Error("Recaptcha not loaded");
       }
@@ -53,6 +54,7 @@ export default function ContactSection() {
         throw new Error("Recaptcha token is empty");
       }
 
+      // Send mail
       await sendmailer(values, token);
       toast.success("Votre message a bien été envoyé");
     } catch (error) {

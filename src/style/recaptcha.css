@@ -1,0 +1,4 @@
+.grecaptcha-badge {
+  transition: all 0.3s ease-in-out !important;
+  transform: translateX(50%);
+}

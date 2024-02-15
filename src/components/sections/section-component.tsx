@@ -17,8 +17,13 @@ export default function SectionComponent({ children, id, className }: SectionCom
   const isInView = useInView(ref, { amount: 0.3 });
 
   useEffect(() => {
+    const captcha = document.querySelector(".grecaptcha-badge") as HTMLElement | null;
+
     if (isInView) {
       setActiveSection(id);
+      if (captcha) {
+        captcha.style.transform = id === "contact" ? "translateX(0)" : "translateX(50%)";
+      }
     }
   }, [isInView, id, setActiveSection]);
 
