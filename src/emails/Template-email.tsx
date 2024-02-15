@@ -8,9 +8,6 @@ export default function TemplateEmail({ firstname, lastname, object, email, text
     </Text>
   ));
 
-  console.log(process.env.BASE_URL);
-  console.log(`${process.env.BASE_URL}/assets/email.png`);
-
   return (
     <Tailwind>
       <Html className="bg-slate-100 text-slate-600">

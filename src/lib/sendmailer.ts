@@ -4,6 +4,7 @@ import nodemailer from "nodemailer";
 import { Mailer } from "@/types/types";
 import { render } from "@react-email/components";
 import TemplateEmail from "@/emails/Template-email";
+import recaptchaValidate from "./recaptcha-validate";
 
 const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, MAILER_FROM_ADDRESS, MAILER_TO_ADDRESS, NODE_ENV } = process.env;
 
@@ -28,7 +29,7 @@ if (NODE_ENV === "production") {
   });
 }
 
-export async function sendmailer(props: Mailer) {
+export async function sendmailer(props: Mailer, token: string) {
   const mailOptions = {
     from: MAILER_FROM_ADDRESS, // L'adresse d'envoi
     to: MAILER_TO_ADDRESS, // Le destinataire
@@ -38,6 +39,12 @@ export async function sendmailer(props: Mailer) {
   };
 
   try {
+    const tokenIsValid = await recaptchaValidate(token);
+
+    if (!tokenIsValid) {
+      throw new Error("Recaptcha token is invalid");
+    }
+
     await transporter.sendMail(mailOptions);
   } catch (error) {
     console.error("Erreur lors de l'envoi de l'email :", error);

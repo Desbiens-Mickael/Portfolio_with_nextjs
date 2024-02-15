@@ -12,6 +12,7 @@ import SubmitButton from "../submit-button";
 import { useState } from "react";
 import SectionComponent from "./section-component";
 import { sendmailer } from "@/lib/sendmailer";
+import { useReCaptcha } from "next-recaptcha-v3";
 
 const formSchema = z.object({
   firstname: z.string().min(1, { message: "Veuillez entrer votre nom" }).max(50),
@@ -25,6 +26,9 @@ const formSchema = z.object({
 
 export default function ContactSection() {
   const [isLoading, setIsLoading] = useState(false);
+
+  // Import 'executeRecaptcha' using 'useReCaptcha' hook
+  const { executeRecaptcha } = useReCaptcha();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -40,7 +44,16 @@ export default function ContactSection() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
       setIsLoading(true);
-      await sendmailer(values);
+
+      if (!executeRecaptcha) {
+        throw new Error("Recaptcha not loaded");
+      }
+      const token = await executeRecaptcha("contact");
+      if (!token) {
+        throw new Error("Recaptcha token is empty");
+      }
+
+      await sendmailer(values, token);
       toast.success("Votre message a bien été envoyé");
     } catch (error) {
       toast.error("Erreur lors de l'envoi du mail");
