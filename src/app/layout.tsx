@@ -2,13 +2,15 @@ import type { Metadata } from "next";
 
 import "./globals.css";
 import "@/style/recaptcha.css";
-import { ThemeProvider } from "@/components/dark-mode/theme-provider";
+
 import Navbar from "@/components/navbar/navbar";
-import { cn } from "@/lib/utils";
 import Header from "@/components/header";
+import MobileNavbar from "@/components/mobile-navbar/mobile-navbar";
+
+import { ThemeProvider } from "@/components/dark-mode/theme-provider";
+import { cn } from "@/lib/utils";
 import { Toaster } from "@/components/ui/sonner";
 import { NavbarProvider } from "@/components/navbar/navbar-context";
-import MobileNavbar from "@/components/mobile-navbar/mobile-navbar";
 import { inter } from "@/style/font";
 import { ReCaptchaProvider } from "next-recaptcha-v3";
 
@@ -16,6 +18,15 @@ export const metadata: Metadata = {
   title: "Portfolio de Mickaël Desbiens | Développeur Web Fullstack",
   description: "Portfolio de Mickaël Desbiens, développeur web fullstack. Découvrez mes projets, mes compétences et mon parcours.",
   keywords: "Portfolio, Mickaël Desbiens, Développeur, Web, Frontend, Backend, Fullstack, concepteur d'application",
+  robots: process.env.NODE_ENV === "production" ? { index: true, follow: true } : { index: false, follow: false },
+  authors: [{ name: "Mickaël Desbiens" }],
+  creator: "Mickaël Desbiens",
+  publisher: "Mickaël Desbiens",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

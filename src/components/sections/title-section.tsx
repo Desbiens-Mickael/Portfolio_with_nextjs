@@ -19,7 +19,7 @@ export default function TitleSection({ text, inverse = false }: TitleSectionProp
       <Reveal>
         <h3 className={cn(`text-4xl md:text-6xl font-bold relative mb-12 flex-2 ${inverse ? "ms-8" : "me-8"}`, [after, before, paytone.className])}>{text}</h3>
       </Reveal>
-      <Separator className="flex-1 bg-secondary mb-5" />
+      <Separator className="flex-1 bg-slate-300 dark:bg-secondary mb-5" />
     </div>
   );
 }

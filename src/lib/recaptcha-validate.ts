@@ -8,11 +8,11 @@ const recaptchaValidate = async (token: string) => {
   try {
     const response = await fetch("https://www.google.com/recaptcha/api/siteverify ", {
       method: "POST",
-      // Utilisez 'application/x-www-form-urlencoded' car c'est le format attendu par Google API.
+      // Use 'application/x-www-form-urlencoded' as this is the format expected by Google API.
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
-      // Encodez les données du corps de la requête en format URL-encoded string.
+      // Encode the data in the request body in URL-encoded string format.
       body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
     });
 
@@ -22,7 +22,7 @@ const recaptchaValidate = async (token: string) => {
 
     const data = await response.json();
 
-    if (!data.success) {
+    if (!data.success || data.score < 0.5) {
       throw new Error("Recaptcha token is invalid");
     }
 

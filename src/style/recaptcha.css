@@ -2,3 +2,9 @@
   transition: all 0.3s ease-in-out !important;
   transform: translateX(50%);
 }
+
+@media (max-width: 768px) {
+  .grecaptcha-badge {
+    visibility: hidden;
+  }
+}

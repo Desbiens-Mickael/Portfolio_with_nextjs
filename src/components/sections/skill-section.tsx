@@ -12,7 +12,7 @@ export default function SkillSection() {
 
   return (
     <SectionComponent id="skills">
-      <TitleSection inverse text={"Techno"} />
+      <TitleSection inverse text={"Skill"} />
       <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="flex-1">
           <Reveal width="w-full">

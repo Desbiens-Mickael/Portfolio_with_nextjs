@@ -141,6 +141,17 @@ export default function ContactSection() {
                 </FormItem>
               )}
             />
+            <div className="md:hidden text-slate-400 text-[0.6rem] font-extralight mt-2">
+              Ce site est protégé par reCAPTCHA et la{" "}
+              <a className="text-teal-300" href="https://policies.google.com/privacy">
+                Politique de confidentialité{" "}
+              </a>{" "}
+              et les{" "}
+              <a className="text-teal-300" href="https://policies.google.com/terms">
+                Conditions d&apos;utilisation{" "}
+              </a>{" "}
+              de Google s&apos;appliquent.
+            </div>
           </div>
 
           <SubmitButton texte="Envoyer" isLoading={isLoading} />

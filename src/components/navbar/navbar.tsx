@@ -12,7 +12,7 @@ export default function Navbar() {
         A propos
       </LinkNavbar>
       <LinkNavbar href="#skills" delay={0.5}>
-        Techno
+        Skill
       </LinkNavbar>
       <LinkNavbar href="#projects" delay={0.6}>
         Projets

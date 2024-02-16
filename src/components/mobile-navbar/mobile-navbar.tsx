@@ -14,7 +14,7 @@ export default function MobileNavbar() {
 
       <LinkNavbarMobile href="#skills" delay={0.5}>
         <ActivityLogIcon width={20} height={20} />
-        <span className="text-xs mt-1">Techno</span>
+        <span className="text-xs mt-1">Skill</span>
       </LinkNavbarMobile>
 
       <LinkNavbarMobile href="#projects" delay={0.6}>
