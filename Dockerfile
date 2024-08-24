@@ -21,8 +21,8 @@ COPY tsconfig.json .
 COPY .env.local .
 
 # Copy all folders
-COPY src ./src
 COPY public ./public
+COPY src ./src
 
 # Start the app in dev mode
 CMD ["npm", "run", "dev"]

@@ -1,14 +1,14 @@
 "use client";
 
-import Image from "next/image";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Dialog, DialogClose, DialogContent, DialogDescription, DialogHeader, DialogOverlay, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Separator } from "../ui/separator";
-import LinkReseau from "../Link-reseau";
+import { Dialog, DialogContent, DialogOverlay, DialogTrigger } from "@/components/ui/dialog";
 import { ExternalLinkIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
+import Image from "next/image";
 import { Suspense, useState } from "react";
-import FullProjectCard from "./full-project-card";
 import Reveal from "../animation/Reveal";
+import LinkReseau from "../Link-reseau";
+import { Separator } from "../ui/separator";
+import FullProjectCard from "./full-project-card";
 
 interface ProjectCardProps {
   title: string;
@@ -34,7 +34,7 @@ export default function ProjectCard({ title, text, RepositoryUrl, imagePath, tec
             </Suspense>
           </CardHeader>
         </Reveal>
-        <CardContent className="flex-col pt-6 p-2 md:p-6 bg-card w-full">
+        <CardContent className="flex-col pt-6 p-2 md:p-6 bg-card w-full h-full">
           <Reveal width="w-full">
             <div className="flex items-center justify-between gap-4 w-full">
               <h4 className="text-[1.2rem] md:text-xl font-semibold">{title}</h4>

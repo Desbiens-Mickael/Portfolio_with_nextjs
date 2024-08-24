@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { ActivityLogIcon, CodeIcon, EnvelopeClosedIcon, PersonIcon } from "@radix-ui/react-icons";
+import { motion } from "framer-motion";
 import LinkNavbarMobile from "./link-navbar-mobile";
 
 export default function MobileNavbar() {

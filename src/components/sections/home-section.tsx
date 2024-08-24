@@ -1,13 +1,13 @@
 "use client";
 
-import Link from "next/link";
-import { Button } from "../ui/button";
-import Reveal from "../animation/Reveal";
-import SectionComponent from "./section-component";
-import { motion } from "framer-motion";
-import WaterDropGrid from "../animation/water-drop-grid/water-drop-grid";
 import { cn } from "@/lib/utils";
 import { paytone } from "@/style/font";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import Reveal from "../animation/Reveal";
+import WaterDropGrid from "../animation/water-drop-grid/water-drop-grid";
+import { Button } from "../ui/button";
+import SectionComponent from "./section-component";
 
 export default function HomeSection() {
   const container = {
@@ -51,8 +51,8 @@ export default function HomeSection() {
         </Reveal>
         <Reveal delay={0.5} slideDelay={0.1}>
           <p className="text-[1rem] md:text-lg font-semibold inline-block max-w-[700px]">
-            Je suis un développeur web full-stack qui aime les technologies modernes et les défis. J&apos;aime apprendre de nouvelles choses et je suis toujours à la recherche de nouveaux défis.
-            J&apos;aime travailler sur des projets qui ont un impact positif sur la vie des gens.
+            Je suis un développeur web full-stack passionné par les technologies modernes et les défis. Toujours avide d&apos;apprendre et de me dépasser, je recherche constamment de nouveaux projets
+            qui ont un impact positif sur la vie des gens.
           </p>
         </Reveal>
         <Reveal width="w-full">

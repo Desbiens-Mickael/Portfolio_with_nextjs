@@ -4,7 +4,6 @@ let nextConfig;
 if (process.env.NODE_ENV !== "production") {
   nextConfig = {
     // -------- Pour le dev avec Docker ----------
-    output: "standalone",
     webpack: (config, _) => ({
       ...config,
       watchOptions: {
@@ -16,7 +15,9 @@ if (process.env.NODE_ENV !== "production") {
     // -------------------------------------------
   };
 } else {
-  nextConfig = {};
+  nextConfig = {
+    output: "standalone",
+  };
 }
 
 module.exports = nextConfig;

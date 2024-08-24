@@ -1,11 +1,11 @@
 "use client";
 
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
-import Image from "next/image";
-import LinkReseau from "../Link-reseau";
 import { ExternalLinkIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
-import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { useEffect, useRef } from "react";
+import LinkReseau from "../Link-reseau";
 
 interface ProjectCardProps {
   title: string;
@@ -54,7 +54,7 @@ export default function FullProjectCard({ title, text, RepositoryUrl, imagePath,
             <h4 className="text-2xl md:text-4xl font-bold">{title}</h4>
           </div>
           <p className="text-primary text-[1rem] md:text-lg font-semibold py-3">{techsText}</p>
-          <p className="text-sm leading-6">{text}</p>
+          <p className="text-sm leading-6 whitespace-pre-line">{text}</p>
         </CardContent>
         <CardFooter className="flex flex-col pb-8 items-start">
           <p className="text-xl font-bold mb-1">Liens du projet :</p>

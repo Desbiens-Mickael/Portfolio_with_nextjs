@@ -1,15 +1,15 @@
 "use client";
-import DarkModeButton from "./dark-mode/dark-mode-button";
-import ButtonCv from "./button-cv";
-import LinkReseau from "./Link-reseau";
 import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
+import ButtonCv from "./button-cv";
 import ButtonLogo from "./button-logo";
+import DarkModeButton from "./dark-mode/dark-mode-button";
+import LinkReseau from "./Link-reseau";
 
 export default function Header() {
   return (
-    <header className="flex items-center justify-between p-4 backdrop-blur sticky top-0 z-50 h-20 py-0 md:px-10">
+    <header className="flex items-center justify-between p-4 backdrop-blur sticky top-0 z-50 w-full h-20 py-0 md:px-10">
       <div className="flex gap-3">
-        <ButtonLogo logoPath="/assets/logo.png" alt="logo" height={40} width={42} LinkStyle="block md:hidden my-4" ImageStyle="w-full h-12" />
+        <ButtonLogo logoPath="/assets/logo.png" alt="logo" height={50} width={50} ContainerStyle="w-[46px] h-[46px] md:hidden" ImageStyle="w-full h-auto" />
         <LinkReseau url={"https://github.com/Desbiens-Mickael"} title={"Github"} delay={0.2}>
           <GitHubLogoIcon width={28} height={28} />
         </LinkReseau>

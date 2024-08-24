@@ -7,14 +7,16 @@ interface ButtonLogoProps {
   alt: string;
   height: number;
   width: number;
-  LinkStyle?: string;
+  ContainerStyle?: string;
   ImageStyle?: string;
 }
 
-export default function ButtonLogo({ logoPath, alt, height, width, LinkStyle, ImageStyle }: ButtonLogoProps) {
+export default function ButtonLogo({ logoPath, alt, height, width, ContainerStyle, ImageStyle }: ButtonLogoProps) {
   return (
-    <Link href={"#top"} className={LinkStyle}>
-      <Image src={logoPath} alt={alt} width={width} height={height} className={cn("rounded-md shadow-md", ImageStyle)} />
-    </Link>
+    <div className={ContainerStyle}>
+      <Link href={"#top"}>
+        <Image src={logoPath} alt={alt} width={width} height={height} className={cn("rounded-md shadow-md", ImageStyle)} />
+      </Link>
+    </div>
   );
 }

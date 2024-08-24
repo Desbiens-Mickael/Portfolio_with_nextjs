@@ -1,35 +1,65 @@
-import TitleSection from "./title-section";
 import ProjectCard from "../project/project-card";
 import SectionComponent from "./section-component";
+import TitleSection from "./title-section";
 
 export default function ProjectSection() {
   const projects = [
     {
       id: 1,
-      title: "1283, Montbéliard,cite libre",
-      text: "Montbéliard est un jeu d'Histoire en ligne développer pour un professeur de collège. Le jeu était déjà appliqué à ses élèves en classe, il souhaitait leur proposer en format numérique. Ce projet a été réalisé en équipe de trois personnes, sur une période de sept semaines en méthodologie agile.",
-      RepositoryUrl: "https://github.com/Desbiens-Mickael/1283-montbeliard-cite-libre",
-      imagePath: "/assets/montbeliart.jpg",
-      techs: ["Symfony", "Twig", "Bootstrap", "MySQL"],
-      ProjectUrl: "https://montbeliard-cite-libre.mickaeldesbiens.com/",
+      title: "Food Buddy",
+      text: `Food Buddy est un espace solidaire d'entraide et de partage, offrant la possibilité de proposer ou de participer à des repas suspendus pour les personnes dans le besoin. 
+            Ce projet rassemble les commerçants engagés dans cette belle initiative. 
+
+            Food Buddy vise à valoriser les compétences et les valeurs humaines pour redonner vie aux principes fondamentaux de solidarité et d'humanité.
+            
+            Conçu lors de ma formation(POEC Java/Angular) à la Wild Code School, Food Buddy est un projet d'application web qui a été réalisé en équipe de deux personnes, sur une période de six semaines en méthodologie agile.`,
+      RepositoryUrl: "https://github.com/Desbiens-Mickael/food_buddy",
+      imagePath: "/assets/food-buddy.jpg",
+      techs: ["Angular", "PostgreSQL", "Java", "Spring Boot", "Docker"],
+      ProjectUrl: "https://food-buddy.mickaeldesbiens.com/",
     },
     {
       id: 2,
-      title: "BlindTest",
-      text: "Ce projet a été réalisé en équipe de quatre en trois semaines. Le but était de créer une application, un quizz musical en utilisant une architecture MVC et procéder à une modélisation de la base de données. Nous avions des tâches à réaliser que nous avons développé dans les temps, ce qui nous a permis de rajouter des features intéressantes.",
-      RepositoryUrl: "https://github.com/Desbiens-Mickael/Blind-test",
-      imagePath: "/assets/blind-tests.jpg",
-      techs: ["PHP", "Twig", "Bootstrap", "Sass", "MySQL"],
-      ProjectUrl: "https://blind-test.mickaeldesbiens.com/",
+      title: "Green Gesture",
+      text: `Green Gesture est une application dédiée aux challenges éco-responsables, où les utilisateurs peuvent remplir une liste d’éco-gestes pour gagner des points.
+            Les groupes, créés par n'importe quel utilisateur, sont éphémères et existent uniquement pour la durée d’un challenge, avec des éco-gestes choisis par le créateur.
+
+            Les membres du groupe reçoivent une notification pour participer, et les éco-gestes peuvent être validés en quelques clics, basés sur la bonne foi, avec la possibilité de fournir des preuves.
+            La version gratuite permet de jouer entre amis, tandis que les entreprises peuvent souscrire à un abonnement "Partenaire" pour inviter leurs salariés, créer des challenges en équipe, et concevoir des éco-gestes sur mesure.
+
+            L’application favorise également les interactions sociales autour des challenges avec des fonctionnalités comme les commentaires et les likes.
+            
+            Une application mobile à également été développée, mais n'a pas été publiée.`,
+
+      RepositoryUrl: "https://github.com/Desbiens-Mickael/green-gesture",
+      imagePath: "/assets/green-gesture.jpg",
+      techs: ["React", "Node.js", "Apollo", "PostgreSQL", "GraphQL", "Tailwind CSS", "Docker", "React Native", "Expo"],
+      ProjectUrl: "https://green-gesture.mickaeldesbiens.com/",
     },
     {
       id: 3,
-      title: "Potes'Agers",
-      text: "Potes'agers est une entreprise fictive qui lutte contre le gaspillage alimentaire.Voilà le topo : des tonnes de produits sont gaspillés tous les jours, des millions de Français n’ont pas assez, d’autres souhaitent consommer mieux et s’engager. Alors chez Potes'agers on se bouge contre le gaspillage ! Lors de ce hackathon sur l'écologie organisé par la Wild Code School, nous avons conçu une application qui permet de donner et/ou récupérer de la nourriture autour de chez soi ou bien de partager son potager.",
-      RepositoryUrl: "https://github.com/Desbiens-Mickael/potes_agers",
-      imagePath: "/assets/potes-agers.jpg",
-      techs: ["PHP", "Twig", "Bootstrap", "MySQL"],
-      ProjectUrl: "https://potes-agers.mickaeldesbiens.com/",
+      title: "1283, Montbéliard,cite libre",
+      text: `Montbéliard est un jeu d'Histoire en ligne développer pour un professeur de collège.
+            Le jeu était déjà appliqué à ses élèves en classe, il souhaitait leur proposer en format numérique.
+            
+            Ce projet a été réalisé en équipe de trois personnes, sur une période de sept semaines en méthodologie agile.`,
+      RepositoryUrl: "https://github.com/Desbiens-Mickael/1283-montbeliard-cite-libre",
+      imagePath: "/assets/montbeliart.jpg",
+      techs: ["Symfony", "Twig", "Bootstrap", "MySQL"],
+      ProjectUrl: "",
+    },
+    {
+      id: 4,
+      title: "BlindTest",
+      text: `Le but était de créer une application, un quizz musical en utilisant une architecture MVC et procéder à une modélisation de la base de données.
+            
+            Nous avions des tâches à réaliser que nous avons développé dans les temps, ce qui nous a permis de rajouter des features intéressantes.
+            
+            Ce projet a été réalisé en équipe de quatre en trois semaines. `,
+      RepositoryUrl: "https://github.com/Desbiens-Mickael/Blind-test",
+      imagePath: "/assets/blind-tests.jpg",
+      techs: ["PHP", "Twig", "Bootstrap", "Sass", "MySQL"],
+      ProjectUrl: "",
     },
   ];
 
