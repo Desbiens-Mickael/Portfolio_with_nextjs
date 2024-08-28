@@ -1,23 +1,14 @@
 "use client";
 
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { FullProjectCardProps } from "@/types/types";
 import { ExternalLinkIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import LinkReseau from "../Link-reseau";
 
-interface ProjectCardProps {
-  title: string;
-  text: string;
-  RepositoryUrl: string;
-  imagePath: string;
-  techsText: string;
-  ProjectUrl?: string;
-  setOpen: (open: boolean) => void;
-}
-
-export default function FullProjectCard({ title, text, RepositoryUrl, imagePath, techsText, ProjectUrl, setOpen }: ProjectCardProps) {
+export default function FullProjectCard({ title, text, RepositoryUrl, imagePath, techsText, ProjectUrl, setOpen }: FullProjectCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -59,12 +50,14 @@ export default function FullProjectCard({ title, text, RepositoryUrl, imagePath,
         <CardFooter className="flex flex-col pb-8 items-start">
           <p className="text-xl font-bold mb-1">Liens du projet :</p>
           <div className="flex items-center gap-4">
-            <LinkReseau url={RepositoryUrl} title={`Repository de ${title}`}>
-              <div className="flex items-center text-primary underline-offset-4 hover:underline">
-                <GitHubLogoIcon width={15} height={15} className="me-2" />
-                <p className="text-sm md:text-[1rem]">code source</p>
-              </div>
-            </LinkReseau>
+            {RepositoryUrl.map(({ url, title, textLink }) => (
+              <LinkReseau key={url} url={url} title={title}>
+                <div className="flex items-center text-primary underline-offset-4 hover:underline">
+                  <GitHubLogoIcon width={15} height={15} className="me-2" />
+                  <p className="text-sm md:text-[1rem]">{textLink ? textLink : "code source"}</p>
+                </div>
+              </LinkReseau>
+            ))}
             {ProjectUrl && (
               <LinkReseau url={ProjectUrl} title="Démo du projet">
                 <div className="flex items-center text-primary underline-offset-4 hover:underline">

@@ -9,15 +9,7 @@ import Reveal from "../animation/Reveal";
 import LinkReseau from "../Link-reseau";
 import { Separator } from "../ui/separator";
 import FullProjectCard from "./full-project-card";
-
-interface ProjectCardProps {
-  title: string;
-  text: string;
-  RepositoryUrl: string;
-  imagePath: string;
-  techs: string[];
-  ProjectUrl?: string;
-}
+import { ProjectCardProps } from "@/types/types";
 
 export default function ProjectCard({ title, text, RepositoryUrl, imagePath, techs, ProjectUrl }: ProjectCardProps) {
   const [open, setOpen] = useState<boolean | undefined>(false);
@@ -40,9 +32,11 @@ export default function ProjectCard({ title, text, RepositoryUrl, imagePath, tec
               <h4 className="text-[1.2rem] md:text-xl font-semibold">{title}</h4>
               <Separator className="hidden md:flex flex-1 bg-secondary" />
               <div className="flex gap-2">
-                <LinkReseau url={RepositoryUrl} title={`Repository de ${title}`}>
-                  <GitHubLogoIcon width={28} height={28} />
-                </LinkReseau>
+                {RepositoryUrl.map(({ url, title }) => (
+                  <LinkReseau key={url} url={url} title={title}>
+                    <GitHubLogoIcon width={28} height={28} />
+                  </LinkReseau>
+                ))}
                 {ProjectUrl && (
                   <LinkReseau url={ProjectUrl} title="Démo du projet">
                     <ExternalLinkIcon width={28} height={28} />

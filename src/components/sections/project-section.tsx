@@ -13,7 +13,10 @@ export default function ProjectSection() {
             Food Buddy vise à valoriser les compétences et les valeurs humaines pour redonner vie aux principes fondamentaux de solidarité et d'humanité.
             
             Conçu lors de ma formation(POEC Java/Angular) à la Wild Code School, Food Buddy est un projet d'application web qui a été réalisé en équipe de deux personnes, sur une période de six semaines en méthodologie agile.`,
-      RepositoryUrl: "https://github.com/Desbiens-Mickael/food_buddy",
+      RepositoryUrl: [
+        { url: "https://github.com/Desbiens-Mickael/food_buddy", title: "Repository du client Angular", textLink: "Client" },
+        { url: "https://github.com/Desbiens-Mickael/food_buddy_api", title: "Repository de l'api Spring Boot", textLink: "API" },
+      ],
       imagePath: "/assets/food-buddy.jpg",
       techs: ["Angular", "PostgreSQL", "Java", "Spring Boot", "Docker"],
       ProjectUrl: "https://food-buddy.mickaeldesbiens.com/",
@@ -31,7 +34,7 @@ export default function ProjectSection() {
             
             Une application mobile à également été développée, mais n'a pas été publiée.`,
 
-      RepositoryUrl: "https://github.com/Desbiens-Mickael/green-gesture",
+      RepositoryUrl: [{ url: "https://github.com/Desbiens-Mickael/green-gesture", title: "Repository de Green Gesture" }],
       imagePath: "/assets/green-gesture.jpg",
       techs: ["React", "Node.js", "Apollo", "PostgreSQL", "GraphQL", "Tailwind CSS", "Docker", "React Native", "Expo"],
       ProjectUrl: "https://green-gesture.mickaeldesbiens.com/",
@@ -43,7 +46,7 @@ export default function ProjectSection() {
             Le jeu était déjà appliqué à ses élèves en classe, il souhaitait leur proposer en format numérique.
             
             Ce projet a été réalisé en équipe de trois personnes, sur une période de sept semaines en méthodologie agile.`,
-      RepositoryUrl: "https://github.com/Desbiens-Mickael/1283-montbeliard-cite-libre",
+      RepositoryUrl: [{ url: "https://github.com/Desbiens-Mickael/1283-montbeliard-cite-libre", title: "Repository de 1283 Montbéliard Cite Libre" }],
       imagePath: "/assets/montbeliart.jpg",
       techs: ["Symfony", "Twig", "Bootstrap", "MySQL"],
       ProjectUrl: "",
@@ -56,7 +59,7 @@ export default function ProjectSection() {
             Nous avions des tâches à réaliser que nous avons développé dans les temps, ce qui nous a permis de rajouter des features intéressantes.
             
             Ce projet a été réalisé en équipe de quatre en trois semaines. `,
-      RepositoryUrl: "https://github.com/Desbiens-Mickael/Blind-test",
+      RepositoryUrl: [{ url: "https://github.com/Desbiens-Mickael/Blind-test", title: "Repository de BlindTest" }],
       imagePath: "/assets/blind-tests.jpg",
       techs: ["PHP", "Twig", "Bootstrap", "Sass", "MySQL"],
       ProjectUrl: "",

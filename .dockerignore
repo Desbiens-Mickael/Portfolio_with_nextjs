@@ -7,5 +7,5 @@ README.md
 !.next/static
 !.next/standalone
 .git
-.env
+# .env
 .env.local
