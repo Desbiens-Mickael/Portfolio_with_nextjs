@@ -38,7 +38,15 @@ RUN \
 FROM base AS runner
 WORKDIR /app
 
+# Define the environment
 ENV NODE_ENV=production
+
+# If sharp is enabled and not found, define the path to the sharp module
+# ENV NEXT_SHARP_PATH=/app/node_modules/sharp
+
+# If recaptcha is activated, add the site key
+ENV NEXT_PUBLIC_RECAPTCHA_SITE_KEY=6LfvI3ApAAAAAM2jiUWNfR4LzoizGa2pQmvvEeqw
+
 # Uncomment the following line in case you want to disable telemetry during runtime.
 # ENV NEXT_TELEMETRY_DISABLED 1
 
@@ -62,9 +70,8 @@ EXPOSE 3000
 
 ENV PORT=3000
 
-# Définit le chemin correct pour `sharp`
-ENV NEXT_SHARP_PATH=/app/node_modules/sharp
 
 # server.js is created by next build from the standalone output
 # https://nextjs.org/docs/pages/api-reference/next-config-js/output
-CMD HOSTNAME="0.0.0.0" node server.js
+# HOSTNAME="0.0.0.0" node server.js
+CMD ["node", "server.js", "--host", "0.0.0.0"]

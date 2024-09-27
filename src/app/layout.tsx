@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
-import "./globals.css";
 import "@/style/recaptcha.css";
+import "./globals.css";
 
-import Navbar from "@/components/navbar/navbar";
 import Header from "@/components/header";
 import MobileNavbar from "@/components/mobile-navbar/mobile-navbar";
+import Navbar from "@/components/navbar/navbar";
 
 import { ThemeProvider } from "@/components/dark-mode/theme-provider";
-import { cn } from "@/lib/utils";
-import { Toaster } from "@/components/ui/sonner";
 import { NavbarProvider } from "@/components/navbar/navbar-context";
+import { Toaster } from "@/components/ui/sonner";
+import { cn } from "@/lib/utils";
 import { inter } from "@/style/font";
 import { ReCaptchaProvider } from "next-recaptcha-v3";
 
@@ -29,6 +29,14 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  viewportFit: "cover",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
@@ -37,13 +45,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <ReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} language="fr">
             <NavbarProvider>
               <Navbar />
-              <div className="flex flex-col w-full">
+              <div className="flex flex-col grow relative">
                 <Header />
-                <main className="w-full relative">
-                  {children}
-                  <MobileNavbar />
-                </main>
+                <main className="w-full pb-12">{children}</main>
               </div>
+              <MobileNavbar />
               <Toaster richColors />
             </NavbarProvider>
           </ReCaptchaProvider>

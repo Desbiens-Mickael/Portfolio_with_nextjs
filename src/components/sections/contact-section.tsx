@@ -1,27 +1,27 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import * as z from "zod";
-import TitleSection from "./title-section";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { toast } from "sonner";
-import SubmitButton from "../submit-button";
-import { useState } from "react";
-import SectionComponent from "./section-component";
 import { sendmailer } from "@/lib/sendmailer";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useReCaptcha } from "next-recaptcha-v3";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { toast } from "sonner";
+import * as z from "zod";
+import SubmitButton from "../submit-button";
+import SectionComponent from "./section-component";
+import TitleSection from "./title-section";
 
 const formSchema = z.object({
-  firstname: z.string().min(1, { message: "Veuillez entrer votre nom" }).max(50),
-  lastname: z.string().min(1, { message: "Veuillez entrer votre prénom" }).max(50),
-  object: z.string().min(1, { message: "Veuillez entrer un objet" }).max(20),
+  firstname: z.string().min(1, { message: "Veuillez entrer votre nom" }).max(50, { message: "Maximum de 50 caractères" }),
+  lastname: z.string().min(1, { message: "Veuillez entrer votre prénom" }).max(50, { message: "Maximum de 50 caractères" }),
+  object: z.string().min(1, { message: "Veuillez entrer l'objet de votre mail" }).max(20, { message: "Maximum de 20 caractères" }),
   email: z.string().email({
     message: "Veuillez entrer une adresse email valide",
   }),
-  text: z.string().min(1, { message: "Veuillez entrer un message" }),
+  text: z.string().min(1, { message: "Veuillez entrer votre message" }),
 });
 
 export default function ContactSection() {

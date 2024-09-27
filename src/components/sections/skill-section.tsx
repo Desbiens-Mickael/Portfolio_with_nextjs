@@ -6,91 +6,34 @@ import SectionComponent from "./section-component";
 import TitleSection from "./title-section";
 
 export default function SkillSection() {
-  const frontEnd = ["React", "Tailwind CSS", "Bootstrap", "TypeScript", "Apollo Client"];
-  const backEnd = ["Node.js", "Express.js", "MySQL", "PostgreSQL", "Java", "PHP", "Apollo Server", "Docker"];
-  const frameworks = ["Next.js", "Angular", "Spring Boot", "Expo", "Symfony"];
-  const mobile = ["React Native"];
-  const api = ["GraphQL", "REST"];
+  const skills = [
+    { title: "Front end", technos: ["React", "Next.js", "Angular", "TypeScript", "Apollo Client", "Tailwind CSS", "Bootstrap"] },
+    { title: "Back end", technos: ["Node.js", "Express.js", "MySQL", "PostgreSQL", "Java", "PHP", "Apollo Server", "Docker", "Spring Boot", "Symfony"] },
+    { title: "Mobile", technos: ["React Native", "Expo"] },
+    { title: "API", technos: ["GraphQL", "REST"] },
+  ];
 
   return (
     <SectionComponent id="skills">
       <TitleSection inverse text={"Skill"} />
       <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="flex-1">
-          <Reveal width="w-full">
-            <h4 className="text-center text-xl md:text-2xl font-bold mb-5">
-              <span className="inline-block bg-primary w-3 h-3 md:w-5 md:h-5 me-5 rounded-full"></span>
-              Front end
-            </h4>
-          </Reveal>
-          <Reveal slideDelay={0.25} width="w-full">
-            <div className="w-full flex flex-wrap gap-3 p-2">
-              {frontEnd.map((techno, id) => (
-                <BadgeTechno key={id} technoName={techno} selected={false} />
-              ))}
-            </div>
-          </Reveal>
-        </div>
-        <div className="flex-1">
-          <Reveal width="w-full">
-            <h4 className="text-center text-xl md:text-2xl font-bold mb-5">
-              <span className="inline-block bg-primary w-3 h-3 md:w-5 md:h-5 me-5 rounded-full"></span>
-              Back end
-            </h4>
-          </Reveal>
-          <Reveal slideDelay={0.25} width="w-full">
-            <div className="w-full flex flex-wrap gap-3 p-2">
-              {backEnd.map((techno, id) => (
-                <BadgeTechno key={id} technoName={techno} selected={false} />
-              ))}
-            </div>
-          </Reveal>
-        </div>
-        <div className="flex-1">
-          <Reveal width="w-full">
-            <h4 className="text-center text-xl md:text-2xl font-bold mb-5">
-              <span className="inline-block bg-primary w-3 h-3 md:w-5 md:h-5 me-5 rounded-full"></span>
-              Frameworks
-            </h4>
-          </Reveal>
-          <Reveal slideDelay={0.25} width="w-full">
-            <div className="w-full flex flex-wrap gap-3 p-2">
-              {frameworks.map((techno, id) => (
-                <BadgeTechno key={id} technoName={techno} selected={false} />
-              ))}
-            </div>
-          </Reveal>
-        </div>
-        <div className="flex-1">
-          <Reveal width="w-full">
-            <h4 className="text-center text-xl md:text-2xl font-bold mb-5">
-              <span className="inline-block bg-primary w-3 h-3 md:w-5 md:h-5 me-5 rounded-full"></span>
-              Mobile
-            </h4>
-          </Reveal>
-          <Reveal slideDelay={0.25} width="w-full">
-            <div className="w-full flex flex-wrap gap-3 p-2">
-              {mobile.map((techno, id) => (
-                <BadgeTechno key={id} technoName={techno} selected={false} />
-              ))}
-            </div>
-          </Reveal>
-        </div>
-        <div className="flex-1">
-          <Reveal width="w-full">
-            <h4 className="text-center text-xl md:text-2xl font-bold mb-5">
-              <span className="inline-block bg-primary w-3 h-3 md:w-5 md:h-5 me-5 rounded-full"></span>
-              API
-            </h4>
-          </Reveal>
-          <Reveal slideDelay={0.25} width="w-full">
-            <div className="w-full flex flex-wrap gap-3 p-2">
-              {api.map((techno, id) => (
-                <BadgeTechno key={id} technoName={techno} selected={false} />
-              ))}
-            </div>
-          </Reveal>
-        </div>
+        {skills.map((skill, id) => (
+          <div key={id} className="flex-1">
+            <Reveal width="w-full">
+              <h4 className="text-center text-xl md:text-2xl font-bold mb-5">
+                <span className="inline-block bg-primary w-3 h-3 md:w-5 md:h-5 me-5 rounded-full"></span>
+                {skill.title}
+              </h4>
+            </Reveal>
+            <Reveal slideDelay={0.25} width="w-full">
+              <div className="w-full flex flex-wrap gap-3 p-2">
+                {skill.technos.map((techno, id) => (
+                  <BadgeTechno key={id} technoName={techno} selected={false} />
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        ))}
       </div>
     </SectionComponent>
   );
