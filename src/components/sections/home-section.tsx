@@ -47,7 +47,7 @@ export default function HomeSection() {
           <span className="text-stroke">Desbiens</span>
         </h1>
         <Reveal>
-          <h2 className="text-primary inline-block text-2xl md:text-4xl font-bold my-4">Concepteur Développeur d&apos;Application</h2>
+          <h2 className="text-primary inline-block text-2xl md:text-4xl font-bold my-4">Développeur Web Full-Stack</h2>
         </Reveal>
         <Reveal delay={0.5} slideDelay={0.1}>
           <p className="text-[1rem] md:text-lg font-semibold inline-block max-w-[700px]">

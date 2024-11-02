@@ -7,9 +7,8 @@ import TitleSection from "./title-section";
 
 export default function SkillSection() {
   const skills = [
-    { title: "Front end", technos: ["React", "Next.js", "Angular", "TypeScript", "Apollo Client", "Tailwind CSS", "Bootstrap"] },
-    { title: "Back end", technos: ["Node.js", "Express.js", "MySQL", "PostgreSQL", "Java", "PHP", "Apollo Server", "Docker", "Spring Boot", "Symfony"] },
-    { title: "Mobile", technos: ["React Native", "Expo"] },
+    { title: "Front end", technos: ["React", "Next.js", "Angular", "TypeScript", "Apollo Client", "Bootstrap", "Tailwind CSS"] },
+    { title: "Back end", technos: ["Node.js", "TypeScript", "Express.js", "MySQL", "PostgreSQL", "Apollo Server", "Spring Boot", "Symfony", "Docker"] },
     { title: "API", technos: ["GraphQL", "REST"] },
   ];
 
